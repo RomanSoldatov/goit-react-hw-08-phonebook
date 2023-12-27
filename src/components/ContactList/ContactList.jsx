@@ -15,7 +15,7 @@ import {
 import { Loader } from 'components/Loader/Loader';
 
 import { Info, List } from './ContactList.styled';
-import { ContactItem } from 'components/ContactItem/ContactItem';
+import { ContactItem } from '../ContactItem/ContactItem';
 
 export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);

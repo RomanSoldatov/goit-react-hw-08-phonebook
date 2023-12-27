@@ -90,11 +90,6 @@ const Header = () => {
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
               {isLoggedIn ? <UserMenu /> : <NavbarAuth />}
             </Box>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ my: 2, display: { xs: 'none', sm: 'block' } }}
-            ></Typography>
             <Box
               sx={{
                 display: { xs: 'none', sm: 'flex' },
