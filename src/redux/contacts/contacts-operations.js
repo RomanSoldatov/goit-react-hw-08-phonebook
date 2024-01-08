@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
 import { toast } from 'react-toastify';
 import { toastifyOptions } from 'utils/toastifyOptions';
 
@@ -22,6 +21,7 @@ export const fetchContacts = createAsyncThunk(
 const isDublicate = (contacts, { name, number }) => {
   const normalizedName = name.toLowerCase().trim();
   const normalizedNumber = number.trim();
+
   const dublicate = contacts.some(
     contact =>
       contact.name.toLowerCase().trim() === normalizedName ||
@@ -81,6 +81,7 @@ export const changeContact = createAsyncThunk(
       toast.success('Contact update', {
         position: 'bottom-right',
       });
+
       return result;
     } catch ({ response }) {
       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);

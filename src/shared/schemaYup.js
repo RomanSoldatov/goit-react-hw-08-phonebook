@@ -9,7 +9,7 @@ export const schema = yup.object().shape({
       'Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d`Artagnan'
     )
     .required(),
-  phone: yup
+  number: yup
     .string()
     .trim()
     .matches(

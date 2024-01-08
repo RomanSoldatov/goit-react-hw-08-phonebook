@@ -15,7 +15,7 @@ import {
 import { Loader } from 'components/Loader/Loader';
 
 import { Info, List } from './ContactList.styled';
-import { ContactItem } from '../ContactItem/ContactItem';
+import { ContactItem } from 'components/ContactItem/ContactItem';
 
 export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -48,8 +48,8 @@ export const ContactList = () => {
       )}
       {!error && !isLoading && filteredContacts?.length > 0 && (
         <List>
-          {filteredContacts?.map(({ name, phone, id }) => {
-            return <ContactItem key={id} name={name} phone={phone} id={id} />;
+          {filteredContacts?.map(({ name, number, id }) => {
+            return <ContactItem key={id} name={name} phone={number} id={id} />;
           })}
         </List>
       )}

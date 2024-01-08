@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
-import { schema } from 'shared/schemaYup';
+import { schema } from '../../shared/schemaYup';
 import 'react-toastify/dist/ReactToastify.css';
 import { addContact } from '../../redux/contacts/contacts-operations';
 import { BsFillTelephoneFill, BsPersonFill } from 'react-icons/bs';
@@ -15,10 +15,11 @@ import {
   LabelWrapper,
 } from './ContactForm.styled';
 
-const initialValues = { name: '', phone: '' };
+const initialValues = { name: '', number: '' };
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
+
   const onAddContact = data => {
     dispatch(addContact(data));
   };
@@ -45,8 +46,8 @@ export const ContactForm = () => {
             <BsFillTelephoneFill />
             Number
           </LabelWrapper>
-          <FieldFormik type="tel" name="phone" />
-          <ErrorMessage name="phone" component="span" />
+          <FieldFormik type="tel" name="number" />
+          <ErrorMessage name="number" component="span" />
         </FormField>
         <StyledButton type="submit">
           <IoMdPersonAdd size="16" />
